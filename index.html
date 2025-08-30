@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Pessoal</title>
+    <style>
+        /* Configurações básicas da página */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background: #f5f5f5; color: #333; line-height: 1.5; max-width: 800px; margin: auto; padding: 20px; }
+        
+        /* Estilo do cabeçalho e menu de navegação */
+        header { background: #2c3e50; color: white; padding: 15px; text-align: center; margin-bottom: 20px; }
+        nav { margin: 15px 0; }
+        nav a { color: white; text-decoration: none; margin: 0 10px; padding: 5px; }
+        nav a:hover, .ativa { background: #3498db; border-radius: 3px; }
+        
+        /* Estilo das seções de conteúdo */
+        section { display: none; background: white; padding: 20px; margin-bottom: 20px; border-radius: 5px; }
+        .ativa { display: block; }
+        h1, h2 { margin-bottom: 15px; color: #2c3e50; }
+        p { margin-bottom: 10px; }
+        
+        /* Estilo do formulário de contato */
+        input, textarea { width: 100%; padding: 8px; margin: 5px 0 15px; border: 1px solid #ddd; border-radius: 4px; }
+        textarea { min-height: 100px; }
+        button { background: #3498db; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #2980b9; }
+        
+        /* Estilo do rodapé */
+        footer { text-align: center; padding: 15px; background: #2c3e50; color: white; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho com menu de navegação -->
+    <header>
+        <h1>Meu Portfólio</h1>
+        <nav>
+            <!-- Links para navegar entre as seções -->
+            <a href="#" onclick="mostrar('inicio')" class="ativa">Início</a>
+            <a href="#" onclick="mostrar('sobre')">Sobre</a>
+            <a href="#" onclick="mostrar('formacao')">Formação</a>
+            <a href="#" onclick="mostrar('projetos')">Projetos</a>
+            <a href="#" onclick="mostrar('contato')">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Seção inicial (página principal) -->
+    <section id="inicio" class="ativa">
+        <h2>Bem-vindo ao meu portfólio</h2>
+        <p>Este site apresenta minhas informações profissionais e acadêmicas.</p>
+        <p>Use o menu acima para navegar entre as seções.</p>
+    </section>
+
+    <!-- Seção de descrição sobre mim -->
+    <section id="sobre">
+        <h2>Sobre Mim</h2>
+        <p>Olá, me chamo Matheus. Sou estudante de programação e adoro criar soluções web.</p>
+        <p>No meu tempo livre, gosto de praticar esportes, jogar e cozinhar.</p>
+    </section>
+
+    <!-- Seção de formação acadêmica -->
+    <section id="formacao">
+        <h2>Formação Acadêmica</h2>
+        <p><strong>Curso:</strong> Análise e Desenvolvimento de Sistemas</p>
+        <p><strong>Instituição:</strong> Faculdade Uninter</p>
+        <p><strong>Previsão de Conclusão:</strong> 2026</p>
+        
+        <h2>Idiomas</h2>
+        <p>Português - Nativo</p>
+        <p>Espanhol - Intermediário</p>
+    </section>
+
+    <!-- Seção de projetos realizados -->
+    <section id="projetos">
+        <h2>Meus Projetos</h2>
+        <p><strong>Site Pessoal:</strong> Desenvolvimento de um site básico sobre mim.</p>
+        <p><strong>BOT Trade:</strong> Tentativa de criar um bot para sinais de alerta em trading.</p>
+    </section>
+
+    <!-- Seção de contato com formulário -->
+    <section id="contato">
+        <h2>Entre em Contato</h2>
+        <form onsubmit="alert('Mensagem enviada com sucesso! Entrarei em contato em breve.'); return false">
+            <input type="text" placeholder="Seu nome" required>
+            <input type="email" placeholder="Seu e-mail" required>
+            <textarea placeholder="Sua mensagem" required></textarea>
+            <button type="submit">Enviar Mensagem</button>
+        </form>
+    </section>
+
+    <!-- Rodapé da página -->
+    <footer>
+        <p>&copy; 2025 - Desenvolvido por Matheus</p>
+    </footer>
+
+    <script>
+        // Função para mostrar a seção selecionada e esconder as outras
+        function mostrar(id) {
+            // Esconde todas as seções
+            document.querySelectorAll('section').forEach(s => s.classList.remove('ativa'));
+            
+            // Mostra apenas a seção selecionada
+            document.getElementById(id).classList.add('ativa');
+            
+            // Atualiza o menu para destacar a opção selecionada
+            document.querySelectorAll('nav a').forEach(a => a.classList.remove('ativa'));
+            event.target.classList.add('ativa');
+        }
+    </script>
+</body>
+</html>
